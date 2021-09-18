@@ -48,4 +48,19 @@ class PagesController extends Controller
     {
         return view('about');
     }
+
+    public function add()
+    {
+        return view('add');
+    }
+
+    public function edit()
+    {
+        return view('edit');
+    }
+
+    public function delete()
+    {
+        return view('delete');
+    }
 }

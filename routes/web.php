@@ -10,3 +10,7 @@ Route::get('/profile', [PagesController::class,'profile']);
 Route::get('/settings', [PagesController::class,'settings']);
 Route::get('/reports', [PagesController::class,'reports']);
 Route::get('/about', [PagesController::class,'about']);
+
+Route::get('/add', [PagesController::class,'add']);
+Route::get('/edit', [PagesController::class,'edit']);
+Route::get('/delete', [PagesController::class,'delete']);
