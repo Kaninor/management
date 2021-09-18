@@ -2,31 +2,24 @@
 
 @section('header')
   <title>{{ $user->firstName." ".$user->lastName }}</title>
-  <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
   <style>
-    body{
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      background-color: white;
-    }
-    .container{
-      padding-top: 70px;
-    }
     .mybtn{
-      margin-right: 15px;
+      margin-right: 20px;
       width: 170px;
       height: 60px;
       font-size: 30px;
+    }
+    .my-container{
+      padding-top: 70px;
     }
   </style>
 @stop
 
 @section('body')
   <center>
-    <div class="container">
-      <button type="button" class="btn btn-success mybtn" id="add">Add</button>
-      <button type="button" class="btn btn-info mybtn" id="edit">Edit</button>
-      <button type="button" class="btn btn-danger mybtn" id="delete">Delete</button>
-    </div>
+    <button type="button" class="btn btn-success mybtn" id="add">Add</button>
+    <button type="button" class="btn btn-info mybtn" id="edit">Edit</button>
+    <button type="button" class="btn btn-danger mybtn" id="delete">Delete</button>
   </center>
 @stop
 

@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
+  <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
     @yield('header')
     <style>
+      body{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background-color: white;
+      }
       a{
         font-size: 20px;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -41,7 +46,9 @@
         </ul>
       </div>
     </nav>
-    @yield('body')
+    <div class="my-container">
+      @yield('body')
+    </div>
     @yield('scripts')
   </body>
 </html>
