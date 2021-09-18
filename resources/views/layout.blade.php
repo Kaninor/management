@@ -32,7 +32,7 @@
             </svg>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/profile">Home</a>
+            <a class="nav-link" href="/dashboard">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/settings">Settings</a>

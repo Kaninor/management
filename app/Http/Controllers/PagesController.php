@@ -10,7 +10,7 @@ class PagesController extends Controller
 {
     public function home()
     {
-        return redirect("/profile");
+        return redirect("/dashboard");
     }
 
     public function admin()
@@ -27,11 +27,11 @@ class PagesController extends Controller
         dd($employees);
     }
 
-    public function profile()
+    public function dashboard()
     {
         $user = DB::table('admin')->where('id', 1)->first();
 
-        return view('profile', compact('user'));
+        return view('dashboard', compact('user'));
     }
 
     public function settings()
