@@ -10,13 +10,7 @@ class PagesController extends Controller
 {
     public function home()
     {
-        $info = [
-            "firstName" => "Dariush",
-            "lastName" => "Rouhifard",
-            "age" => 16
-        ];
-
-        return view('welcome', compact('info'));
+        return redirect("/profile");
     }
 
     public function admin()
@@ -31,5 +25,27 @@ class PagesController extends Controller
         $employees = DB::table("employee")->get();
 
         dd($employees);
+    }
+
+    public function profile()
+    {
+        $user = DB::table('admin')->where('id', 1)->first();
+
+        return view('profile', compact('user'));
+    }
+
+    public function settings()
+    {
+        return view('settings');
+    }
+
+    public function reports()
+    {
+        return view('reports');
+    }
+
+    public function about()
+    {
+        return view('about');
     }
 }
