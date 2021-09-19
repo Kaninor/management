@@ -31,30 +31,38 @@
     <table class="table mytab  table-striped table-dark ">
       <thead>
         <tr>
-          <th >#</th>
-          <th >P-Name</th>
-          <th >Created at</th>
-          <th >Updated at</th>
+          <th>#</th>
+          <th>P-Name</th>
+          <th>Price</th>
+          <th>Created at</th>
+          <th>Updated at</th>
+          <th>P-Id</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <th>1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          <td>Shampoo</td>
+          <td>5$</td>
+          <td>14/9/2020</td>
+          <td>----------</td>
+          <td>1</td>
         </tr>
         <tr>
           <th>2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
+          <td>Soap</td>
+          <td>3.99$</td>
+          <td>13/9/2020</td>
+          <td>----------</td>
+          <td>3</td>
         </tr>
         <tr>
           <th>3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
+          <td>Chips</td>
+          <td>0.99$</td>
+          <td>12/9/2020</td>
+          <td>13/9/2020</td>
+          <td>10</td>
         </tr>
       </tbody>
     </table>
