@@ -34,6 +34,7 @@
           <th>#</th>
           <th>P-Name</th>
           <th>Price</th>
+          <th>Num-O-P</th>
           <th>Created at</th>
           <th>Updated at</th>
           <th>P-Id</th>
@@ -44,6 +45,7 @@
           <th>1</th>
           <td>Shampoo</td>
           <td>5$</td>
+          <td>3</td>
           <td>14/9/2020</td>
           <td>----------</td>
           <td>1</td>
@@ -52,6 +54,7 @@
           <th>2</th>
           <td>Soap</td>
           <td>3.99$</td>
+          <td>7</td>
           <td>13/9/2020</td>
           <td>----------</td>
           <td>3</td>
@@ -60,6 +63,7 @@
           <th>3</th>
           <td>Chips</td>
           <td>0.99$</td>
+          <td>3</td>
           <td>12/9/2020</td>
           <td>13/9/2020</td>
           <td>10</td>
