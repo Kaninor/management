@@ -52,12 +52,14 @@ class PagesController extends Controller
 
     public function add()
     {
-        return view('add');
+        $mode = "Add";
+        return view('addEdit', compact('mode'));
     }
 
     public function edit()
     {
-        return view('add');
+        $mode = "Edit";
+        return view('addEdit', compact('mode'));
     }
 
     public function delete()

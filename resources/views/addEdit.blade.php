@@ -10,5 +10,7 @@
 @stop
 
 @section('body')
-  Add
+  <center>
+    <h1>{{ $mode }}</h1>
+  </center>
 @stop
