@@ -2,9 +2,10 @@
 
 @section('header')
   <title>{{ $user->firstName." ".$user->lastName }}</title>
+  <link rel="icon" href='<i class="icon-dashboard"></i>'>
   <style>
     .mybtn{
-      margin-right: 20px;
+      margin-right: 10px;
       width: 100px;
       height: 48px;
       font-size: 20px;
@@ -22,11 +23,31 @@
       font-family: "Lucida Console", "Courier New", monospace;
       font-size: 17px;
     }
+    .mysearchbox{
+      width: 350px;
+      border-top-left-radius: 0.25rem;
+      border-bottom-left-radius: 0.25rem;
+      font-size: 25px;
+    }
+    .mysearchbox:focus{
+      outline-offset: 0;
+      outline-color: #007bff;
+    }
+    .my-searchbtn{
+      border-top-right-radius: .25rem;
+      border-bottom-right-radius: .25rem;
+      width: 90px;
+      font-size: 20px;
+    }
   </style>
 @stop
 
 @section('body')
-  <button type="button" class="btn btn-success mybtn" id="add">Add</button>
+  <div class="input-group">
+    <button type="button" class="btn btn-success mybtn" id="add">Add</button>
+    <input type="search" class="mysearchbox" placeholder="Search">
+    <button type="button" class="btn-primary my-searchbtn">search</button>
+  </div>
   <center>
     <table class="table mytab  table-striped table-dark ">
       <thead>
