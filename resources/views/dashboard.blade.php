@@ -41,11 +41,11 @@
           <th>Actions</th>
         </tr>
       </thead>
-      <?php $i = 1; ?>
+      <?php $i = 0; ?>
       <tbody>
         @foreach ($products as $product)
           <tr>
-            <th><?= $i++; ?></th>
+            <th id="row_num"><?= ++$i; ?></th>
             <td>{{ $product->p_name }}</td>
             <td>{{ $product->price }}$</td>
             <td>{{ $product->num_o_p }}</td>
@@ -53,10 +53,10 @@
             <td>{{ $product->updated_at ? $product->updated_at : "----------"}}</td>
             <td>{{ $product->id }}</td>
             <td>
-                <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-success tabbtn">+</button>
-                <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-warning tabbtn">-</button>
-                <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-info" onclick="edit_btn_click()">Edit</button>
-                <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-danger" onclick="delete_btn_click()">Delete</button>
+              <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-success tabbtn">+</button>
+              <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-warning tabbtn">-</button>
+              <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-info" onclick="edit_btn_click()">Edit</button>
+              <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-danger" onclick="delete_btn_click()">Delete</button>
             </td>
           </tr>
         @endforeach
@@ -68,6 +68,7 @@
 @section('scripts')
   <script>
     const add_btn = document.querySelector('#add');
+    const row_num = document.getElementById('row_num');
 
     add_btn.addEventListener('click', () => {
       window.location.href = "/add";
@@ -78,7 +79,7 @@
     }
 
     function delete_btn_click(){
-      window.location.href = "/delete";
+      confirm("Do you really wanna delete this row " + row_num.innerHTML + "!");
     }
   </script>
 @stop
