@@ -10,7 +10,14 @@
       font-size: 30px;
     }
     .my-container{
-      padding-top: 70px;
+      padding-top: 12px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .mytab{
+      margin-top: 17px;
+      font-family: "Lucida Console", "Courier New", monospace;
+      font-size: 17px;
     }
   </style>
 @stop
@@ -20,6 +27,37 @@
     <button type="button" class="btn btn-success mybtn" id="add">Add</button>
     <button type="button" class="btn btn-info mybtn" id="edit">Edit</button>
     <button type="button" class="btn btn-danger mybtn" id="delete">Delete</button>
+  
+    <table class="table mytab  table-striped table-dark ">
+      <thead>
+        <tr>
+          <th >#</th>
+          <th >P-Name</th>
+          <th >Created at</th>
+          <th >Updated at</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
   </center>
 @stop
 
