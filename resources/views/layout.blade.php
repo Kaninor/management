@@ -9,7 +9,7 @@
         background-color: white;
       }
       a{
-        font-size: 20px;
+        font-size: 18px;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       }
       .mynav{
