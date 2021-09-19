@@ -57,7 +57,7 @@ class PagesController extends Controller
 
     public function edit()
     {
-        return view('edit');
+        return view('add');
     }
 
     public function delete()
