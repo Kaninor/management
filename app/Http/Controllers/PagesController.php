@@ -30,8 +30,9 @@ class PagesController extends Controller
     public function dashboard()
     {
         $user = DB::table('admin')->where('id', 1)->first();
+        $products = DB::table('products')->get();
 
-        return view('dashboard', compact('user'));
+        return view('dashboard', compact('user', 'products'));
     }
 
     public function settings()

@@ -5,9 +5,12 @@
   <style>
     .mybtn{
       margin-right: 20px;
-      width: 170px;
-      height: 60px;
-      font-size: 30px;
+      width: 100px;
+      height: 48px;
+      font-size: 20px;
+    }
+    .tabbtn{
+      width: 30px;
     }
     .my-container{
       padding-top: 12px;
@@ -23,11 +26,8 @@
 @stop
 
 @section('body')
+  <button type="button" class="btn btn-success mybtn" id="add">Add</button>
   <center>
-    <button type="button" class="btn btn-success mybtn" id="add">Add</button>
-    <button type="button" class="btn btn-info mybtn" id="edit">Edit</button>
-    <button type="button" class="btn btn-danger mybtn" id="delete">Delete</button>
-  
     <table class="table mytab  table-striped table-dark ">
       <thead>
         <tr>
@@ -38,36 +38,28 @@
           <th>Created at</th>
           <th>Updated at</th>
           <th>P-Id</th>
+          <th>Actions</th>
         </tr>
       </thead>
+      <?php $i = 1; ?>
       <tbody>
-        <tr>
-          <th>1</th>
-          <td>Shampoo</td>
-          <td>5$</td>
-          <td>3</td>
-          <td>14/9/2020</td>
-          <td>----------</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <th>2</th>
-          <td>Soap</td>
-          <td>3.99$</td>
-          <td>7</td>
-          <td>13/9/2020</td>
-          <td>----------</td>
-          <td>3</td>
-        </tr>
-        <tr>
-          <th>3</th>
-          <td>Chips</td>
-          <td>0.99$</td>
-          <td>3</td>
-          <td>12/9/2020</td>
-          <td>13/9/2020</td>
-          <td>10</td>
-        </tr>
+        @foreach ($products as $product)
+          <tr>
+            <th><?= $i++; ?></th>
+            <td>{{ $product->p_name }}</td>
+            <td>{{ $product->price }}$</td>
+            <td>{{ $product->num_o_p }}</td>
+            <td>{{ $product->created_at }}</td>
+            <td>{{ $product->updated_at ? $product->updated_at : "----------"}}</td>
+            <td>{{ $product->id }}</td>
+            <td>
+                <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-success tabbtn">+</button>
+                <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-warning tabbtn">-</button>
+                <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-info" onclick="edit_btn_click()">Edit</button>
+                <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-danger" onclick="delete_btn_click()">Delete</button>
+            </td>
+          </tr>
+        @endforeach
       </tbody>
     </table>
   </center>
@@ -75,20 +67,18 @@
 
 @section('scripts')
   <script>
-    const add_btn = document.getElementById('add');
-    const edit_btn = document.getElementById('edit');
-    const delete_btn = document.getElementById('delete');
+    const add_btn = document.querySelector('#add');
 
     add_btn.addEventListener('click', () => {
       window.location.href = "/add";
     });
 
-    edit_btn.addEventListener('click', () => {
+    function edit_btn_click () {
       window.location.href = "/edit";
-    });
+    }
 
-    delete_btn.addEventListener('click', () => {
+    function delete_btn_click(){
       window.location.href = "/delete";
-    });
+    }
   </script>
 @stop
