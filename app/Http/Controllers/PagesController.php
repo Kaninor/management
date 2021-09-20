@@ -49,21 +49,4 @@ class PagesController extends Controller
     {
         return view('about');
     }
-
-    public function add()
-    {
-        $mode = "Add";
-        return view('addEdit', compact('mode'));
-    }
-
-    public function edit()
-    {
-        $mode = "Edit";
-        return view('addEdit', compact('mode'));
-    }
-
-    public function delete()
-    {
-        return view('delete');
-    }
 }
