@@ -17,7 +17,6 @@
 
   p {
     font-size: 16px;
-    color: rgb(61, 46, 39);
   }
 
   dfn {
