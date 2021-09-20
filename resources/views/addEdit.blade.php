@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('header')
-<title>Add</title>
+<title>{{ $isEdit ? "Edit" : "Add" }}</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Righteous&family=Signika+Negative:wght@600;700&display=swap');
 
