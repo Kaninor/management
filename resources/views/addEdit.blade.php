@@ -36,7 +36,12 @@
   <div class="form-group">
     <label for="adminemail">Admin email :</label>
     <input type="email" class="form-control my-input" id="adminemail" aria-describedby="emailHelp" placeholder="Enter email" name="email">
-    <small id="emailHelp" class="form-text text-muted">You should enter the owner's email for this product.</small>
+    <small id="emailHelp" class="form-text text-muted">Enter the owner's email for this product.</small>
+  </div>
+  <div class="form-group">
+    <label for="adminpassword">Admin password :</label>
+    <input type="password" class="form-control my-input" id="adminpassword" aria-describedby="passHelp" placeholder="Enter password" name="password">
+    <small id="passHelp" class="form-text text-muted">Enter the owner's password for this product.</small>
   </div>
   <div class="form-group">
     <label for="productname">Product Name :</label>
