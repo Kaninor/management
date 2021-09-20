@@ -4,19 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class QueryController extends Controller
 {
     public function add()
     {
-        $mode = "Add";
-        return view('addEdit', compact('mode'));
+        $isEdit = false;
+        return view('addEdit', compact('isEdit'));
     }
 
     public function edit()
     {
-        $mode = "Edit";
-        return view('addEdit', compact('mode'));
+        $isEdit = true;
+        $query = DB::table('products')->where('id', 22)->first();
+
+        return view('addEdit', compact('isEdit', 'query'));
     }
 
     public function delete()
