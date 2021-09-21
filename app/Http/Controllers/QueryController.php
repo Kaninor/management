@@ -43,11 +43,6 @@ class QueryController extends Controller
             $query = DB::table('products')->where('id', $id)->first();
             return view('addEdit', compact('isEdit', 'query'));
         }
-
-        $query = DB::table('products')->where('id', $id)->first();
-        if ($query != null) {
-            return redirect("/editproduct?id=" . $id . "&p_name=" . $query->p_name . "&p_price=" . $query->price . "&p_num=" . $query->num_o_p - 1);
-        }
     }
 
     public function delete()
