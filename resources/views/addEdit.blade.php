@@ -32,7 +32,9 @@
   <h1>{{ $isEdit ? "Edit" : "Add" }}</h1>
 </center>
 
-<form method="get" action="{{ $isEdit ? '/edit' : '/add' }}">
+<form method="get" action="{{ $isEdit ? '/editproduct' : '/add' }}">
+  <input type="hidden" name="e" value="1">
+  <input type="hidden" name="id" value="{{$isEdit ? $query->id : ''}}">
   <div class="form-group">
     <label for="adminemail">Admin email :</label>
     <input type="email" class="form-control my-input" id="adminemail" aria-describedby="emailHelp" placeholder="Enter email" name="email">
@@ -55,7 +57,7 @@
     <label for="number">Number :</label>
     <input type="number" class="form-control my-input" id="number" placeholder="Number" name="p_num" value="{{$isEdit ? $query->num_o_p : ''}}">
   </div>
-  <input type="submit" class="btn btn-primary my-sub" name="sub">
+  <input type="submit" class="btn btn-primary my-sub" name="sub" id="sub">
 </form>
 @stop
 

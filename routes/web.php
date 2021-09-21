@@ -14,4 +14,5 @@ Route::get('/about', [PagesController::class, 'about']);
 
 Route::get('/add', [QueryController::class, 'add']);
 Route::get('/edit', [QueryController::class, 'edit']);
+Route::get('/editproduct', [QueryController::class, 'editproduct']);
 Route::get('/delete', [QueryController::class, 'delete']);
