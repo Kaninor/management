@@ -23,11 +23,13 @@
   .tabbtn {
     width: 32px;
     height: 33px;
+    font-size: 17px;
   }
 
   .tabbtn2 {
     width: 70px;
     height: 33px;
+    font-size: 15px;
   }
 
   .my-container {
