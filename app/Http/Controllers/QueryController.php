@@ -31,6 +31,7 @@ class QueryController extends Controller
     {
         $isEdit = true;
         $id = !empty($_GET['id']) ? $_GET['id'] : null;
+        $id = base64_decode(base64_decode(base64_decode($id)));
         if ($id != null) {
             $query = DB::table('products')->where('id', $id)->first();
             return view('addEdit', compact('isEdit', 'query'));
@@ -42,6 +43,7 @@ class QueryController extends Controller
     public function delete()
     {
         $id = $_GET['id'];
+        $id = base64_decode(base64_decode(base64_decode($id)));
         DB::table('products')->where('id', $id)->delete();
 
         return redirect('/');
