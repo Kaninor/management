@@ -65,6 +65,17 @@
 <script>
   const price = document.getElementById("price");
   const number = document.getElementById("number");
+  const sub = document.getElementById('sub');
+  const id = document.getElementById('id');
+  const email = document.getElementById('adminemail');
+  const password = document.getElementById('adminpassword');
+  const name = document.getElementById('productname');
+  //const price = document.getElementById('price');
+  const num = document.getElementById('number');
+
+  sub.addEventListener('click', () => {
+    //window.location.href = "/editproduct?id=" + $id + "&p_name=" + $query - > p_name + "&p_price=" + $query - > price + "&p_num=" + $query - > num_o_p
+  });
 
   var invalidChars = [
     "-",
