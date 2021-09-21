@@ -32,7 +32,7 @@
   <h1>{{ $isEdit ? "Edit" : "Add" }}</h1>
 </center>
 
-<form method="" action="">
+<form method="get" action="{{ $isEdit ? '/edit' : '/add' }}">
   <div class="form-group">
     <label for="adminemail">Admin email :</label>
     <input type="email" class="form-control my-input" id="adminemail" aria-describedby="emailHelp" placeholder="Enter email" name="email">
