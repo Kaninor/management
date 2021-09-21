@@ -46,7 +46,7 @@
 <br>
 <h4>Technologies:</h4>
 <p>
-  HTML5, CSS, PHP, Laravel, JavaScript, JQuery, Bootstrap, MYSQL
+  HTML5, CSS, PHP, Laravel, JavaScript, JQuery, Node JS (npm), Bootstrap, MYSQL
 </p>
 <br>
 <h5>
