@@ -20,7 +20,7 @@
   }
 
   dfn {
-    color: rgb(34, 103, 214);
+    color: #007bff;
   }
 </style>
 @stop
@@ -34,7 +34,7 @@
   This is a store management system that helps you to manage your store.<br>
   e.g it save your products with some properties in Database.<br>
   and when you reload your page it's not gonna lose any data.<br>
-  Our Database is <dfn>MYSQL</dfn> it means that every single data is storing in <dfn>MYSQL</dfn> Database.<br>
+  Our Database is <dfn><a href="https://www.mysql.com" target="_blank">MYSQL</a></dfn> it means that every single data is storing in <dfn><a href="https://www.mysql.com" target="_blank">MYSQL</a></dfn> Database.<br>
   in the product table you will have your products and with their own properties and some actions.<br>
   actions are increament, decreament, edit, delete and the top the web app there is a button for adding new products.<br>
   when you add a product into Database it's gonna behave like this: if it exists it's gonna add it the existing data, but if it doesn't<br>
