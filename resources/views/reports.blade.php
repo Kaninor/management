@@ -3,14 +3,24 @@
 @section('header')
 <title>Reports</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Righteous&family=Signika+Negative:wght@600;700&display=swap');
+
+  h1 {
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Righteous', cursive;
+    font-family: 'Signika Negative', sans-serif;
+  }
+
   .my-container {
-    padding-left: 5px;
+    padding-left: 6px;
   }
 </style>
 @stop
 
 @section('body')
-Reports
+<center>
+  <h1>Reports</h1>
+</center>
 @stop
 
 @section('icon')
