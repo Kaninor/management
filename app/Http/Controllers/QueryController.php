@@ -67,4 +67,13 @@ class QueryController extends Controller
         if (DB::table('products')->where('id', $id)->update(['p_name' => $p_name, 'price' => $p_price, 'num_o_p' => $p_num, 'updated_at' => new DateTime]))
             return redirect('/');
     }
+
+    public function update()
+    {
+        $id = $_GET['id'];
+        $num = $_GET['num'];
+
+        DB::table('products')->where('id', $id)->update(["num_o_p" => $num, "updated_at" => new DateTime]);
+        return redirect("/");
+    }
 }

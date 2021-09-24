@@ -3,7 +3,7 @@
 @section('header')
 <title>{{ $user->firstName." ".$user->lastName }}</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link rel="icon" href='<i class="icon-dashboard"></i>'>
+<!-- link rel="icon" href='<i class="icon-dashboard"></i>' -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Righteous&family=Signika+Negative:wght@600;700&display=swap');
 
@@ -109,61 +109,83 @@
   const add_btn = document.querySelector('#add');
   const reload_btn = document.getElementById('reload-btn');
 
+  let ids = [];
+  let numbers = [];
+
   add_btn.addEventListener('click', () => {
     window.location.href = "/add";
   });
 
   reload_btn.addEventListener('click', () => {
-    window.location.href = "/";
+    if (ids.length === 0 && numbers.length === 0) {
+      window.location.href = "/";
+    } else {
+      for (let i = 0; i < ids.length; i++) {
+        window.location.href = "/update?id=" + ids[i] + "&num=" + numbers[i];
+      }
+    }
   });
 
-  $(document).ready(function() {
-
-    $(".edit").on('click', function() {
-      let currentRow = $(this).closest("tr");
-      let id = currentRow.find("td:eq(5)").text();
-      let encoded_id = btoa(btoa(btoa(id)));
-      window.location.href = "/edit?id=" + encoded_id;
-    });
-
+  $(".edit").on('click', function() {
+    let currentRow = $(this).closest("tr");
+    let id = currentRow.find("td:eq(5)").text();
+    let encoded_id = btoa(btoa(btoa(id)));
+    window.location.href = "/edit?id=" + encoded_id;
   });
 
-  $(document).ready(function() {
 
-    $(".delete").on('click', function() {
-      let currentRow = $(this).closest("tr");
-      let id = currentRow.find("td:eq(5)").text();
-      let row_num = currentRow.find("th:eq(0)").text();
-      let encoded_id = btoa(btoa(btoa(id)));
-      if (confirm("Are you sure you wanna delete row " + row_num))
-        window.location.href = "/delete?id=" + encoded_id;
-    });
-
+  $(".delete").on('click', function() {
+    let currentRow = $(this).closest("tr");
+    let id = currentRow.find("td:eq(5)").text();
+    let row_num = currentRow.find("th:eq(0)").text();
+    let encoded_id = btoa(btoa(btoa(id)));
+    if (confirm("Are you sure you wanna delete row " + row_num))
+      window.location.href = "/delete?id=" + encoded_id;
   });
 
-  $(document).ready(function() {
+  ///////////////////////////////////////////////////////////////
 
-    $(".increament").on('click', function() {
-      let currentRow = $(this).closest("tr");
-      let p_num = currentRow.find("td:eq(2)");
-      let p_num_int = parseInt(p_num.text());
+  $(".increament").on('click', function() {
+    let currentRow = $(this).closest("tr");
+    let id = currentRow.find("td:eq(5)").text();
+    let p_num = currentRow.find("td:eq(2)");
+    let p_num_int = parseInt(p_num.text());
 
-      p_num.text(p_num_int + 1);
-    });
-
+    p_num.text(p_num_int + 1);
+    if (!ids.includes(id)) {
+      ids.push(id);
+      numbers.push(p_num_int + 1);
+    } else if (ids.includes(id)) {
+      let index = ids.indexOf(id);
+      ids.splice(index, 1);
+      numbers.splice(index, 1);
+      ids.push(id);
+      numbers.push(p_num_int + 1);
+    }
   });
 
-  $(document).ready(function() {
+  $(".decreament").on('click', function() {
+    let currentRow = $(this).closest("tr");
+    let id = currentRow.find("td:eq(5)").text();
+    let p_num = currentRow.find("td:eq(2)");
+    let p_num_int = parseInt(p_num.text());
 
-    $(".decreament").on('click', function() {
-      let currentRow = $(this).closest("tr");
-      let p_num = currentRow.find("td:eq(2)");
-      let p_num_int = parseInt(p_num.text());
+    if (p_num_int - 1 >= 0) {
+      p_num.text(p_num_int - 1);
+    }
 
-      if (p_num_int - 1 >= 0)
-        p_num.text(p_num_int - 1);
-    });
+    let finalNum = p_num_int - 1 >= 0 ? p_num_int - 1 : 0;
 
+    if (!ids.includes(id)) {
+      ids.push(id);
+      numbers.push(finalNum);
+    } else if (ids.includes(id)) {
+      let index = ids.indexOf(id);
+      ids.splice(index, 1);
+      numbers.splice(index, 1);
+      ids.push(id);
+      numbers.push(finalNum);
+    }
   });
 </script>
 @stop
