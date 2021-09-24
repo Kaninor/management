@@ -51,7 +51,7 @@
 
 @section('body')
 <div class="input-group">
-  <button type="button" class="btn btn-success mybtn" id="add">Add</button>
+  <button type="button" class="btn btn-success mybtn" id="add" title="Adding a new product">Add</button>
   <button type="button" title="This button is used to reload the page, but use it when you click on `+` or `-` action!" class="btn btn-primary my-reload" id="reload-btn">
     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
       <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
@@ -85,10 +85,11 @@
         <td>{{ $product->updated_at ? $product->updated_at : "-----------------------"}}</td>
         <td class="row-id">{{ $product->id }}</td>
         <td>
-          <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-success tabbtn increament">+</button>
-          <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-warning tabbtn decreament">-</button>
-          <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-info tabbtn2 edit">Edit</button>
-          <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-danger tabbtn2 delete">Delete</button>
+          <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-success tabbtn increament" title="increament the num-o-p of this row">+</button>
+          <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-warning tabbtn decreament" title="decreament the num-o-p of this row">-</button>
+          <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-info tabbtn2 edit" title="Edit this row">Edit</button>
+          <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-danger tabbtn2 delete" title="Delete this row">Delete</button>
+          <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-primary tabbtn2 info" title="Raw info of this row">INFO</button>
         </td>
       </tr>
       @endforeach
@@ -141,6 +142,12 @@
     let encoded_id = btoa(btoa(btoa(id)));
     if (confirm("Are you sure you wanna delete row " + row_num))
       window.location.href = "/delete?id=" + encoded_id;
+  });
+
+  $(".info").on('click', function() {
+    let currentRow = $(this).closest("tr");
+    let id = currentRow.find("td:eq(5)").text();
+    window.location.href = "/info?id=" + id;
   });
 
   ///////////////////////////////////////////////////////////////
