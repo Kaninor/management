@@ -34,7 +34,7 @@
         <li class="nav-item ">
           @yield('icon')
         </li>
-        <li class="nav-item ">
+        <li class="nav-item">
           <a class="nav-link" href="/dashboard">Home</a>
         </li>
         <li class="nav-item">

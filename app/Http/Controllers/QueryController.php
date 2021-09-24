@@ -76,4 +76,12 @@ class QueryController extends Controller
         DB::table('products')->where('id', $id)->update(["num_o_p" => $num, "updated_at" => new DateTime]);
         return redirect("/");
     }
+
+    public function info()
+    {
+        $id = $_GET['id'];
+
+        $product = DB::table('products')->where('id', $id)->first(["p_name", "price", "num_o_p", "created_at", "updated_at"]);
+        dd($product);
+    }
 }

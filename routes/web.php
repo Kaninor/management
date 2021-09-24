@@ -17,3 +17,4 @@ Route::get('/edit', [QueryController::class, 'edit']);
 Route::get('/editproduct', [QueryController::class, 'editproduct']);
 Route::get('/update', [QueryController::class, 'update']);
 Route::get('/delete', [QueryController::class, 'delete']);
+Route::get('/info', [QueryController::class, 'info']);
