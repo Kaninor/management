@@ -31,8 +31,8 @@
   }
 
   .btncol {
-    background-color: rgb(114, 125, 0);
-    border-color: rgb(114, 125, 0);
+    background-color: rgb(166, 129, 33);
+    border-color: rgb(166, 129, 33);
   }
 
   .my-reload {
