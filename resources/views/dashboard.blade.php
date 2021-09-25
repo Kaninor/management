@@ -181,6 +181,7 @@
   });
 
   $("#reload-btn").on('click', () => {
+    //RELOAD
     if (ids.length === 0 && numbers.length === 0) {
       window.location.href = "/";
     } else {
@@ -264,6 +265,12 @@
       numbers.push(finalNum);
 
       console.log(ids, numbers)
+    }
+  });
+
+  $("html").bind('keypress', function(event) {
+    if (event.which === 82 && event.shiftKey) {
+      window.location.href = "/";
     }
   });
 </script>
