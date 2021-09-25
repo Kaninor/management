@@ -54,7 +54,7 @@
   Github: <a href="https://github.com/Kaninor" target="_blank">Click here</a><br>
 </h5>
 <p>
-  you can check my other repositories in my github page and enjoy it :)<br>
+  you can check my other repositories in my github page and enjoy it 😜<br>
 </p>
 @stop
 
