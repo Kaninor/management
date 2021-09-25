@@ -5,6 +5,8 @@
   <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
   @yield('header')
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Righteous&family=Signika+Negative:wght@600;700&display=swap');
+
     body {
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       background-color: white;
@@ -14,7 +16,9 @@
 
     a {
       font-size: 18px;
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-family: 'Dancing Script', cursive;
+      font-family: 'Righteous', cursive;
+      font-family: 'Signika Negative', sans-serif;
     }
 
     .mynav {
