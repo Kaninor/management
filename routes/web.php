@@ -20,6 +20,5 @@ Route::get('/dashboard/update', [DashboardController::class, 'update']);
 Route::get('/dashboard/delete', [DashboardController::class, 'delete']);
 Route::get('/dashboard/info', [DashboardController::class, 'info']);
 
-Route::get('/report/print', [ReportsController::class, 'print']);
 Route::get('/report/view', [ReportsController::class, 'view']);
 Route::get('/report/delete', [ReportsController::class, 'delete']);
