@@ -1,7 +1,11 @@
 @extends('layout2')
 
 @section('head')
+<<<<<<< HEAD
 <title>{{ $mode == "print" ? "Print view" : "View" }}</title>
+=======
+<title>View</title>
+>>>>>>> bacacc2692159d45074d2cc13e7d36d4262dc9aa
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
   .receipt-content .logo a:hover {
