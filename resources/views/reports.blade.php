@@ -14,7 +14,9 @@
   }
 
   .my-container {
-    padding-left: 6px;
+    padding-top: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .mytab {
@@ -37,8 +39,16 @@
     border-color: rgb(166, 129, 33);
   }
 
+  .tabbtn {
+    width: 32px;
+    height: 31px;
+    font-size: 18px;
+    padding-right: 10px;
+    padding-left: 7px;
+  }
+
   .tabbtn2 {
-    width: 62px;
+    width: 32px;
     height: 31px;
     font-size: 15px;
   }
@@ -80,9 +90,23 @@
         <td>{{ -12 * $j }}%</td>
         <td>2021-9-29 15:00:00</td>
         <td>
-          <button class="print  btn btn-teal btn-rounded btn-sm m-0 btn-success tabbtn2">Print</button>
-          <button class="view   btn btn-teal btn-rounded btn-sm m-0 btn-success tabbtn2">View</button>
-          <button class="delete btn btn-teal btn-rounded btn-sm m-0 btn-success tabbtn2">Delete</button>
+          <button class="print btn btn-teal btn-rounded btn-sm m-0 btn-warning tabbtn" title="Print this report">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer-fill" viewBox="0 0 16 16">
+              <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z" />
+              <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" />
+            </svg>
+          </button>
+          <button class="view btn btn-teal btn-rounded btn-sm m-0 btn-primary tabbtn" title="The view, that's gonna be printed">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+              <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+              <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+            </svg>
+          </button>
+          <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-danger tabbtn delete" title="Delete this report">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+              <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+            </svg>
+          </button>
         </td>
         </tr>
         @endfor
@@ -103,7 +127,7 @@
     let currentRow = $(this).closest("tr");
     let row = currentRow.find("th:eq(0)").text();
 
-    window.location.href = "/report/print?row=" + row;
+    window.location.href = "/report/view?mode=print";
   });
 
   $(".view").on("click", function() {
@@ -111,7 +135,11 @@
   });
 
   $(".delete").on("click", function() {
-    window.location.href = "/report/delete";
+    let currentRow = $(this).closest("tr");
+    let row_num = currentRow.find("th:eq(0)").text();
+
+    currentRow.remove();
+    //window.location.href = "/report/delete";
   });
 </script>
 @stop
