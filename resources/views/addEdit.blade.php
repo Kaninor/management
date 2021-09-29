@@ -32,7 +32,7 @@
   <h1>{{ $isEdit ? "Edit" : "Add" }}</h1>
 </center>
 
-<form method="get" action="{{ $isEdit ? '/editproduct' : '/add' }}">
+<form method="get" action="{{ $isEdit ? '/dashboard/editproduct' : '/dashboard/add' }}">
   <input type="hidden" name="e" value="1">
   <input type="hidden" name="id" value="{{$isEdit ? $query->id : ''}}">
   <div class="form-group">

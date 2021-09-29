@@ -173,7 +173,7 @@
   let numbers = [];
 
   $("#add").on('click', () => {
-    window.location.href = "/add";
+    window.location.href = "/dashboard/add";
   });
 
   $("#report").on('click', () => {
@@ -185,7 +185,7 @@
       window.location.href = "/";
     } else {
       for (let i = 0; i < ids.length; i++) {
-        window.location.href = "/update?id=" + ids[i] + "&num=" + numbers[i];
+        window.location.href = "/dashboard/update?id=" + ids[i] + "&num=" + numbers[i];
       }
     }
   });
@@ -194,7 +194,7 @@
     let currentRow = $(this).closest("tr");
     let id = currentRow.find("td:eq(5)").text();
     let encoded_id = btoa(btoa(btoa(id)));
-    window.location.href = "/edit?id=" + encoded_id;
+    window.location.href = "/dashboard/edit?id=" + encoded_id;
   });
 
 
@@ -204,13 +204,13 @@
     let row_num = currentRow.find("th:eq(0)").text();
     let encoded_id = btoa(btoa(btoa(id)));
     if (confirm("Are you sure you wanna delete row " + row_num))
-      window.location.href = "/delete?id=" + encoded_id;
+      window.location.href = "/dashboard/delete?id=" + encoded_id;
   });
 
   $(".info").on('click', function() {
     let currentRow = $(this).closest("tr");
     let id = currentRow.find("td:eq(5)").text();
-    window.location.href = "/info?id=" + id;
+    window.location.href = "/dashboard/info?id=" + id;
   });
 
   ///////////////////////////////////////////////////////////////

@@ -103,15 +103,15 @@
     let currentRow = $(this).closest("tr");
     let row = currentRow.find("th:eq(0)").text();
 
-    window.location.href = "/print?row=" + row;
+    window.location.href = "/report/print?row=" + row;
   });
 
   $(".view").on("click", function() {
-    window.location.href = "/view";
+    window.location.href = "/report/view";
   });
 
   $(".delete").on("click", function() {
-    window.location.href = "/deletereport";
+    window.location.href = "/report/delete";
   });
 </script>
 @stop

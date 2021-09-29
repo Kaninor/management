@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use DateTime;
 
-class QueryController extends Controller
+class DashboardController extends Controller
 {
     public function add()
     {

@@ -19,7 +19,7 @@ class ReportsController extends Controller
         return "View";
     }
 
-    public function deletereport()
+    public function delete()
     {
         return "Delete Report";
     }
