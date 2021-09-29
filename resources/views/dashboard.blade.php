@@ -133,7 +133,7 @@
         <td>{{ $product->num_o_p }}</td>
         <td>{{ $product->created_at }}</td>
         <td>{{ $product->updated_at ? $product->updated_at : "-----------------------"}}</td>
-        <td class="row-id">{{ $product->id }}</td>
+        <td>{{ $product->id }}</td>
         <td>
           <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-success tabbtn2 increament" title="increament the num-o-p of this row">+</button>
           <button type="button" class="btn btn-teal btn-rounded btn-sm m-0 btn-warning tabbtn2 decreament" title="decreament the num-o-p of this row">-</button>
@@ -181,7 +181,6 @@
   });
 
   $("#reload-btn").on('click', () => {
-    //RELOAD
     if (ids.length === 0 && numbers.length === 0) {
       window.location.href = "/";
     } else {
