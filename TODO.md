@@ -2,7 +2,7 @@
 
 -   [x] Add, Edit view
 -   [ ] Settings view
--   [ ] Reports view
+-   [x] Reports view
 -   [x] new controller for add and edit
 -   [x] JQuery for add and edit
 -   [x] JQuery for increament and decreament
