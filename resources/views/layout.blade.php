@@ -64,13 +64,13 @@
     let html = document.getElementById("html");
 
     html.addEventListener("keydown", (event) => {
-      if (event.which == 49 && event.shiftKey) {
+      if (event.which == 49 && event.altKey) {
         window.location.href = "/";
-      } else if (event.which == 50 && event.shiftKey) {
+      } else if (event.which == 50 && event.altKey) {
         window.location.href = "/settings";
-      } else if (event.which == 51 && event.shiftKey) {
+      } else if (event.which == 51 && event.altKey) {
         window.location.href = "/reports";
-      } else if (event.which == 52 && event.shiftKey) {
+      } else if (event.which == 52 && event.altKey) {
         window.location.href = "/about";
       }
     });

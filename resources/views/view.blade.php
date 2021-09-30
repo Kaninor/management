@@ -269,7 +269,7 @@
                 <strong id="profit" style="color: red; font-size: 20px;">
                   {{ $report->profit }}%
                 </strong><br><br>
-                <strong style="color: red; font-size: 20px;">
+                <strong id="loss" style="color: red; font-size: 20px;">
                   {{ $report->loss }}%
                 </strong>
               </div>
@@ -342,6 +342,12 @@
     $("#profit").css("color", "green");
   <?php else : ?>
     $("#profit").css("color", "red");
+  <?php endif; ?>
+
+  <?php if ($report->loss <= 0) : ?>
+    $("#loss").css("color", "green");
+  <?php else : ?>
+    $("#loss").css("color", "red");
   <?php endif; ?>
 
   let a = $("#a");

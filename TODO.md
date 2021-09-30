@@ -8,6 +8,8 @@
 -   [x] JQuery for increament and decreament
 -   [ ] Report button in dashboard view
 -   [ ] Data validation for editing mode
+-   [ ] Sign up and login view
+-   [ ] Multiple admins for web app, handling them with token
 -   [ ] Updating about view
 -   [ ] Changing the product table structure by using migrations
 -   [ ] Maybe making the web app more secure instead of using GET in adding new product we should use POST
