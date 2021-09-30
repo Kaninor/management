@@ -142,8 +142,10 @@
   $(".delete").on("click", function() {
     let currentRow = $(this).closest("tr");
     let id = currentRow.find("td:eq(0)").text();
+    let row_num = currentRow.find("th:eq(0)").text();
 
-    window.location.href = "/report/delete?id=" + id;
+    if (confirm("Are you sure you wanna delete row " + row_num))
+      window.location.href = "/report/delete?id=" + id;
   });
 </script>
 @stop

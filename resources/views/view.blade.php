@@ -207,10 +207,10 @@
   <div class="container bootstrap snippets bootdey" id="page">
     <div class="row">
       <div class="col-md-12">
-        <div class="invoice-wrapper">
-          <div class="intro">
+        <div class="invoice-wrapper" style="box-shadow: 4px 4px 9px #aaaaaa; border: 3px solid #555;">
+          <div class="intro" style="font-size: 18px;">
             <center>
-              <strong style="font-size: 23px;">Report invoice</strong>
+              <strong style="font-size: 26px;">Report invoice</strong>
             </center>
             <br>
             This is the report for sale and buy
@@ -219,11 +219,11 @@
           <div class="payment-info">
             <div class="row">
               <div class="col-sm-6">
-                <span>Report code</span>
+                <span style=" color: rgb(36, 36, 36)">Report code</span>
                 <strong>{{ hash("md5", $report->id*256/23) }}</strong>
               </div>
               <div class="col-sm-6 text-right">
-                <span>Report Date</span>
+                <span style=" color: rgb(36, 36, 36)">Report Date</span>
                 <strong>{{ $report->created_at }}</strong>
               </div>
             </div>
@@ -232,7 +232,7 @@
           <div class="payment-details">
             <div class="row">
               <div class="col-sm-6">
-                <span>Field</span><br>
+                <span style=" color: rgb(36, 36, 36)">Field</span><br>
                 <strong>
                   Solds :
                 </strong><br><br>
@@ -253,7 +253,7 @@
                 </strong>
               </div>
               <div class="col-sm-6 text-right">
-                <span>Value</span><br>
+                <span style=" color: rgb(36, 36, 36)">Value</span><br>
                 <strong style="color: green; font-size: 20px;">
                   {{ $report->solds }}
                 </strong><br><br>
@@ -279,29 +279,29 @@
           <div class="line-items">
             <div class="headers clearfix">
               <div class="row">
-                <div class="col-xs-4">Description</div>
+                <div class="col-xs-4" style=" color: rgb(36, 36, 36); font-size: 17px">Description</div>
               </div>
             </div>
             <div class="items">
               <div class="row item">
-                <div class="col-xs-4 desc">
+                <div class="col-xs-4 desc" style=" color: rgb(36, 36, 36); font-size: 17px">
                   A. Solds - boughts : {{ $report->solds - $report->boughts }}
                 </div>
               </div>
               <div class="row item">
-                <div class="col-xs-4 desc">
+                <div class="col-xs-4 desc" style=" color: rgb(36, 36, 36); font-size: 17px">
                   B. Sale - Buy : {{ $report->sale - $report->buy }}$
                 </div>
               </div>
               <div class="row item">
-                <div class="col-xs-4 desc">
+                <div class="col-xs-4 desc" style=" color: rgb(36, 36, 36); font-size: 17px">
                   C. Profit - Loss : {{ $report->profit - $report->loss }}%
                 </div>
               </div>
             </div>
             <div class="total text-right">
-              <p class="extra-notes">
-                <strong>Notice!</strong>
+              <p class="extra-notes" ; style="font-size: 14px">
+                <strong style=" color: rgb(36, 36, 36); font-size: 15px">Notice!</strong>
                 These reports are important and after printing it you should
                 keep it with yourself.
               </p>
@@ -321,7 +321,7 @@
           </div>
         </div>
 
-        <div class="footer">
+        <div class="footer" style=" color: rgb(36, 36, 36); font-size: 16px">
           Copyright © 2021. Kaninor Company
         </div>
       </div>
@@ -373,5 +373,20 @@
       total.css("color", "rgb(7, 74, 10)");
       break;
   }
+
+  $(document).on('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && (e.key == "p" || e.charCode == 16 || e.charCode == 112 || e.keyCode == 80)) {
+      e.cancelBubble = true;
+      e.preventDefault();
+      alert("go to `/reports` and click on the print action to print this view");
+      e.stopImmediatePropagation();
+    }
+  });
+
+  $(function() {
+    $(this).bind("contextmenu", function(e) {
+      e.preventDefault();
+    });
+  });
 </script>
 @stop
