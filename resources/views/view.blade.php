@@ -381,10 +381,9 @@
   }
 
   $(document).on('keydown', function(e) {
-    if ((e.ctrlKey || e.metaKey) && (e.key == "p" || e.charCode == 16 || e.charCode == 112 || e.keyCode == 80)) {
+    if ((e.ctrlKey || e.metaKey) && (e.key == "p" || e.charCode == 16 || e.charCode == 112 || e.keyCode == 80 || e.keyCode == 85 || e.keyCode == 65) || e.keyCode == 73) {
       e.cancelBubble = true;
       e.preventDefault();
-      alert("go to `/reports` and click on the print action to print this view");
       e.stopImmediatePropagation();
     }
   });

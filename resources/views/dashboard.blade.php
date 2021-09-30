@@ -177,7 +177,7 @@
   });
 
   $("#report").on('click', () => {
-    window.location.href = "/reports";
+    window.location.href = "/report/add?solds=10&boughts=3&sale=4.6&buy=7.99&profit=-65.6&loss=45.7";
   });
 
   $("#reload-btn").on('click', () => {
