@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html id="html" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
   <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
@@ -59,6 +59,22 @@
     @yield('body')
   </div>
   @yield('scripts')
+
+  <script>
+    let html = document.getElementById("html");
+
+    html.addEventListener("keydown", (event) => {
+      if (event.which == 49 && event.shiftKey) {
+        window.location.href = "/";
+      } else if (event.which == 50 && event.shiftKey) {
+        window.location.href = "/settings";
+      } else if (event.which == 51 && event.shiftKey) {
+        window.location.href = "/reports";
+      } else if (event.which == 52 && event.shiftKey) {
+        window.location.href = "/about";
+      }
+    });
+  </script>
 </body>
 
 </html>
