@@ -42,7 +42,9 @@ class PagesController extends Controller
 
     public function reports()
     {
-        return view('reports');
+        $reports = DB::table("reports")->get();
+
+        return view('reports', compact('reports'));
     }
 
     public function about()

@@ -68,6 +68,7 @@
             <path d="M4.5 2.5a.5.5 0 0 0-1 0v9.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L4.5 12.293V2.5z" />
           </svg>
         </th>
+        <th>ID</th>
         <th>Solds</th>
         <th>Boughts</th>
         <th>Sale</th>
@@ -80,15 +81,16 @@
     </thead>
     <tbody>
       <?php $j = 0; ?>
-      @for ($i = 0; $i < 10; $i++) <tr>
+      @foreach ($reports as $report) <tr>
         <th><?= ++$j; ?></th>
-        <td>{{ 5 * $j }}</td>
-        <td>{{ 3 * $j }}</td>
-        <td>{{17 * $j }}</td>
-        <td>{{ 13.5 * $j }}</td>
-        <td>{{ 56 * $j }}%</td>
-        <td>{{ -12 * $j }}%</td>
-        <td>2021-9-29 15:00:00</td>
+        <td>{{ $report->id }}</td>
+        <td>{{ $report->solds }}</td>
+        <td>{{ $report->boughts }}</td>
+        <td>{{ $report->sale }}$</td>
+        <td>{{ $report->buy }}$</td>
+        <td>{{ $report->profit }}%</td>
+        <td>{{ $report->loss }}%</td>
+        <td>{{ $report->created_at }}</td>
         <td>
           <button class="print btn btn-teal btn-rounded btn-sm m-0 btn-warning tabbtn" title="Print this report">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer-fill" viewBox="0 0 16 16">
@@ -108,8 +110,8 @@
             </svg>
           </button>
         </td>
-        </tr>
-        @endfor
+      </tr>
+      @endforeach
     </tbody>
   </table>
 </center>
@@ -125,21 +127,23 @@
 <script>
   $(".print").on("click", function() {
     let currentRow = $(this).closest("tr");
-    let row = currentRow.find("th:eq(0)").text();
+    let id = currentRow.find("td:eq(0)").text();
 
-    window.location.href = "/report/view?mode=print";
+    window.location.href = "/report/view?mode=print&id=" + id;
   });
 
   $(".view").on("click", function() {
-    window.location.href = "/report/view";
+    let currentRow = $(this).closest("tr");
+    let id = currentRow.find("td:eq(0)").text();
+
+    window.location.href = "/report/view?id=" + id;
   });
 
   $(".delete").on("click", function() {
     let currentRow = $(this).closest("tr");
-    let row_num = currentRow.find("th:eq(0)").text();
+    let id = currentRow.find("td:eq(0)").text();
 
-    currentRow.remove();
-    //window.location.href = "/report/delete";
+    window.location.href = "/report/delete?id=" + id;
   });
 </script>
 @stop
