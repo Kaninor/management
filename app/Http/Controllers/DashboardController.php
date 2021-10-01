@@ -23,7 +23,7 @@ class DashboardController extends Controller
             DB::table('products')->insert(['p_name' => $p_name, 'price' => $p_price, 'num_o_p' => $p_num, 'created_at' => new DateTime]);
             return redirect("/");
         } else {
-            return view('addEdit', compact('isEdit'));
+            return view('dashboardViews.addEdit', compact('isEdit'));
         }
     }
 
@@ -41,7 +41,7 @@ class DashboardController extends Controller
 
         if ($id != null && $e == null) {
             $query = DB::table('products')->where('id', $id)->first();
-            return view('addEdit', compact('isEdit', 'query'));
+            return view('dashboardViews.addEdit', compact('isEdit', 'query'));
         }
     }
 

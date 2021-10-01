@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 
 @section('header')
 <title>{{ $isEdit ? "Edit" : "Add" }}</title>

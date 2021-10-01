@@ -28,7 +28,7 @@ class ReportsController extends Controller
         $mode = !empty($_GET['mode']) ? $_GET['mode'] : null;
         $report = DB::table("reports")->where('id', $id)->first();
 
-        return view("view", compact('mode', 'report'));
+        return view("reportsViews.view", compact('mode', 'report'));
     }
 
     public function delete()

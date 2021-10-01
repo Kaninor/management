@@ -17,7 +17,7 @@ class PagesController extends Controller
     {
         $admins = DB::table("admin")->get();
 
-        return view('admin', compact('admins'));
+        return view('mainPages.admin', compact('admins'));
     }
 
     public function dumpdata()
@@ -32,23 +32,23 @@ class PagesController extends Controller
         $user = DB::table('admin')->where('id', 1)->first();
         $products = DB::table('products')->get();
 
-        return view('dashboard', compact('user', 'products'));
+        return view('mainPages.dashboard', compact('user', 'products'));
     }
 
     public function settings()
     {
-        return view('settings');
+        return view('mainPages.settings');
     }
 
     public function reports()
     {
         $reports = DB::table("reports")->get();
 
-        return view('reports', compact('reports'));
+        return view('mainPages.reports', compact('reports'));
     }
 
     public function about()
     {
-        return view('about');
+        return view('mainPages.about');
     }
 }
