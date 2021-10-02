@@ -177,33 +177,7 @@
   });
 
   $("#report").on('click', () => {
-
-    <?php
-
-    use Illuminate\Support\Facades\DB;
-
-    $solds = DB::table("solds")->get("sale");
-    $boughts = DB::table("boughts")->get("buy");
-    $soldsCount = DB::table("solds")->count();
-    $boughtsCount = DB::table("boughts")->count();
-
-    $totalSoldsPrice = 0;
-    $totalBoughtsPrice = 0;
-
-    foreach ($solds as $sold) {
-      $totalSoldsPrice += $sold->sale;
-    }
-
-    foreach ($boughts as $bought) {
-      $totalBoughtsPrice += $bought->buy;
-    }
-
-    $total = $totalSoldsPrice + $totalBoughtsPrice;
-
-    $profit = $totalSoldsPrice * 100 / $total;
-    $loss = $totalBoughtsPrice * 100 / $total;
-    ?>
-    window.location.href = "/report/add?solds=<?= $soldsCount ?>&boughts=<?= $boughtsCount ?>&sale=<?= $totalSoldsPrice ?>&buy=<?= $totalBoughtsPrice ?>&profit=<?= $profit ?>&loss=<?= $loss ?>";
+    window.location.href = "/report/add?solds=<?= $data[0] ?>&boughts=<?= $data[1] ?>&sale=<?= $data[2] ?>&buy=<?= $data[3] ?>&profit=<?= $data[4] ?>&loss=<?= $data[5] ?>";
   });
 
   $("#reload-btn").on('click', () => {

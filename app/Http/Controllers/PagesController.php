@@ -32,7 +32,30 @@ class PagesController extends Controller
         $user = DB::table('admin')->where('id', 1)->first();
         $products = DB::table('products')->get();
 
-        return view('mainPages.dashboard', compact('user', 'products'));
+        $solds = DB::table("solds")->get("sale");
+        $boughts = DB::table("boughts")->get("buy");
+        $soldsCount = DB::table("solds")->count();
+        $boughtsCount = DB::table("boughts")->count();
+
+        $totalSoldsPrice = 0;
+        $totalBoughtsPrice = 0;
+
+        foreach ($solds as $sold) {
+            $totalSoldsPrice += $sold->sale;
+        }
+
+        foreach ($boughts as $bought) {
+            $totalBoughtsPrice += $bought->buy;
+        }
+
+        $total = $totalSoldsPrice + $totalBoughtsPrice;
+
+        $profit = $totalSoldsPrice * 100 / $total;
+        $loss = $totalBoughtsPrice * 100 / $total;
+
+        $data = [$soldsCount, $boughtsCount, $totalSoldsPrice, $totalBoughtsPrice, $profit, $loss];
+
+        return view('mainPages.dashboard', compact('user', 'products', 'data'));
     }
 
     public function settings()
