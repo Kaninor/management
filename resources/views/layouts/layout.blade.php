@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="{{ url('icon.ico') }}">
   @yield('header')
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Righteous&family=Signika+Negative:wght@600;700&display=swap');
@@ -41,16 +42,16 @@
           @yield('icon')
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/dashboard">Home</a>
+          <a class="nav-link mynavlink-dashboard" href="/dashboard">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/settings">Settings</a>
+          <a class="nav-link mynavlink-settings" href="/settings">Settings</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/reports">Reporsts</a>
+          <a class="nav-link mynavlink-reports" href="/reports">Reporsts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/about">About</a>
+          <a class="nav-link mynavlink-about" href="/about">About</a>
         </li>
       </ul>
     </div>
