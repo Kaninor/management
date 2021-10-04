@@ -2,6 +2,7 @@
 
 -   [x] Add, Edit view
 -   [x] use ajax for security (POST)
+-   [ ] navbar as cover
 -   [ ] Settings view
 -   [x] Reports view
 -   [x] new controller for add and edit

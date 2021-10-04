@@ -50,7 +50,7 @@
 <br>
 <h4>Technologies:</h4>
 <p>
-  HTML5, CSS, PHP, Laravel, JavaScript, JQuery, Node JS (npm), Bootstrap, MYSQL
+  HTML 5, CSS 3, PHP 8.0.6, Laravel 8, JavaScript, JQuery 3.5.1, Node JS (npm), Bootstrap 4, MYSQL
 </p>
 <br>
 <h5>
