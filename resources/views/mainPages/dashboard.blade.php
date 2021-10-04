@@ -180,7 +180,23 @@
   });
 
   $("#report").on('click', () => {
-    window.location.href = "/report/add?solds=<?= $data[0] ?>&boughts=<?= $data[1] ?>&sale=<?= $data[2] ?>&buy=<?= $data[3] ?>&profit=<?= $data[4] ?>&loss=<?= $data[5] ?>";
+    let datas = {
+      "solds": <?= $data[0] ?>,
+      "boughts": <?= $data[1] ?>,
+      "sale": <?= $data[2] ?>,
+      "buy": <?= $data[3] ?>,
+      "profit": <?= $data[4] ?>,
+      "loss": <?= $data[5] ?>
+    }
+
+    $.ajax({
+      type: "POST",
+      url: "/api/report/add",
+      data: datas,
+      success: function() {
+        window.location.href = "/reports";
+      },
+    });
   });
 
   $("#reload-btn").on('click', () => {
