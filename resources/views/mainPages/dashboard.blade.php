@@ -221,9 +221,19 @@
     let currentRow = $(this).closest("tr");
     let id = currentRow.find("td:eq(5)").text();
     let row_num = currentRow.find("th:eq(0)").text();
-    let encoded_id = btoa(btoa(btoa(id)));
-    if (confirm("Are you sure you wanna delete row " + row_num))
-      window.location.href = "/dashboard/delete?id=" + encoded_id;
+    if (confirm("Are you sure you wanna delete row " + row_num)) {
+      let postData = {
+        "id": id
+      }
+      $.ajax({
+        type: "POST",
+        url: "/api/dashboard/delete",
+        data: postData,
+        success: function() {
+          currentRow.remove();
+        },
+      });
+    }
   });
 
   $(".info").on('click', function() {

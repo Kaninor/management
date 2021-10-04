@@ -148,8 +148,19 @@
     let id = currentRow.find("td:eq(0)").text();
     let row_num = currentRow.find("th:eq(0)").text();
 
-    if (confirm("Are you sure you wanna delete row " + row_num))
-      window.location.href = "/report/delete?id=" + id;
+    if (confirm("Are you sure you wanna delete row " + row_num)) {
+      let datas = {
+        "id": id
+      }
+      $.ajax({
+        type: "POST",
+        url: "/api/report/delete",
+        data: datas,
+        success: function() {
+          currentRow.remove();
+        },
+      });
+    }
   });
 </script>
 @stop

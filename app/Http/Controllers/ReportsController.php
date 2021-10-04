@@ -30,10 +30,9 @@ class ReportsController extends Controller
         return view("reportsViews.view", compact('mode', 'report'));
     }
 
-    public function delete()
+    public function delete(Request $req)
     {
-        $id = $_GET['id'];
+        $id = $req->id;
         DB::table("reports")->where('id', $id)->delete();
-        return redirect("/reports");
     }
 }

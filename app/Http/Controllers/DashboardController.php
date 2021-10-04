@@ -45,13 +45,10 @@ class DashboardController extends Controller
         }
     }
 
-    public function delete()
+    public function delete(Request $req)
     {
-        $id = $_GET['id'];
-        $id = base64_decode(base64_decode(base64_decode($id)));
+        $id = $req->id;
         DB::table('products')->where('id', $id)->delete();
-
-        return redirect('/');
     }
 
     public function editproduct()

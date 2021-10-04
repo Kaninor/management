@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReportsController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/report/add', [ReportsController::class, 'add']);
+Route::post('/report/delete', [ReportsController::class, 'delete']);
+Route::post('/dashboard/delete', [DashboardController::class, 'delete']);
