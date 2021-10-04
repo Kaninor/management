@@ -1,6 +1,7 @@
 # Todo
 
 -   [x] Add, Edit view
+-   [ ] use ajax for security (POST)
 -   [ ] Settings view
 -   [x] Reports view
 -   [x] new controller for add and edit
