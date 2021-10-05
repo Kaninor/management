@@ -17,14 +17,6 @@ class DashboardController extends Controller
 
     public function addproduct(Request $req)
     {
-        $isEdit = false;
-
-        //$email = !empty($_GET['email']) ? $_GET['email'] : null;
-        //$password = !empty($_GET['password']) ? $_GET['password'] : null;
-        //$p_name = !empty($_GET['p_name']) ? $_GET['p_name'] : null;
-        //$p_price = !empty($_GET['p_price']) ? $_GET['p_price'] : null;
-        //$p_num = !empty($_GET['p_num']) ? $_GET['p_num'] : null;
-
         $email = $req->email;
         $password = $req->password;
         $p_name = $req->p_name;
@@ -56,12 +48,6 @@ class DashboardController extends Controller
     public function editproduct(Request $req)
     {
         $id = $req->id;
-
-        //$email = !empty($_GET['email']) ? $_GET['email'] : null;
-        //$password = !empty($_GET['password']) ? $_GET['password'] : null;
-        //$p_name = $_GET['p_name'];
-        //$p_price = $_GET['p_price'];
-        //$p_num = $_GET['p_num'];
 
         $email = $req->email;
         $password = $req->password;
