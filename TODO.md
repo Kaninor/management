@@ -16,7 +16,4 @@
 -   [ ] Changing the product table structure by using migrations
 -   [x] Maybe making the web app more secure instead of using GET in adding new product we should use POST
 -   [x] add a new action called INFO and showing some details in there
-<<<<<<< HEAD
 -   [ ] editing README
-=======
->>>>>>> a22faf807f65088745ef3f28657499d19f77a6a9
