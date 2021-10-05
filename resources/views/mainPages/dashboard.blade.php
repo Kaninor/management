@@ -204,7 +204,19 @@
       window.location.href = "/";
     } else {
       for (let i = 0; i < ids.length; i++) {
-        window.location.href = "/dashboard/update?id=" + ids[i] + "&num=" + numbers[i];
+        //window.location.href = "/dashboard/update?id=" + ids[i] + "&num=" + numbers[i];
+        let datas = {
+          "id": ids[i],
+          "num": numbers[i]
+        }
+        $.ajax({
+          type: "POST",
+          url: "/api/dashboard/update",
+          data: datas,
+          success: function() {
+            window.location.href = "/";
+          },
+        });
       }
     }
   });

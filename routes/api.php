@@ -22,4 +22,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/report/add', [ReportsController::class, 'add']);
 Route::post('/report/delete', [ReportsController::class, 'delete']);
+
 Route::post('/dashboard/delete', [DashboardController::class, 'delete']);
+Route::post('/dashboard/addproduct', [DashboardController::class, 'addproduct']);
+Route::post('/dashboard/editproduct', [DashboardController::class, 'editproduct']);
+Route::post('/dashboard/update', [DashboardController::class, 'update']);
