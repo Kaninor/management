@@ -32,30 +32,29 @@
   <h1>{{ $isEdit ? "Edit" : "Add" }}</h1>
 </center>
 
-<form method="get" action="{{ $isEdit ? '/dashboard/editproduct' : '/dashboard/add' }}">
-  <input type="hidden" name="e" value="1">
+<form method="post" action="{{ $isEdit ? '/api/dashboard/editproduct' : '/api/dashboard/addproduct' }}">
   <input type="hidden" name="id" value="{{$isEdit ? $query->id : ''}}">
   <div class="form-group">
     <label for="adminemail">Admin email :</label>
-    <input type="email" class="form-control my-input" id="adminemail" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+    <input type="email" class="form-control my-input" id="adminemail" aria-describedby="emailHelp" placeholder="Enter email" name="email" required>
     <small id="emailHelp" class="form-text text-muted">Enter the owner's email for this product.</small>
   </div>
   <div class="form-group">
     <label for="adminpassword">Admin password :</label>
-    <input type="password" class="form-control my-input" id="adminpassword" aria-describedby="passHelp" placeholder="Enter password" name="password">
+    <input type="password" class="form-control my-input" id="adminpassword" aria-describedby="passHelp" placeholder="Enter password" name="password" required>
     <small id="passHelp" class="form-text text-muted">Enter the owner's password for this product.</small>
   </div>
   <div class="form-group">
     <label for="productname">Product Name :</label>
-    <input type="text" class="form-control my-input" id="productname" placeholder="Product Name" name="p_name" value="{{$isEdit ? $query->p_name : ''}}">
+    <input type="text" class="form-control my-input" id="productname" placeholder="Product Name" name="p_name" value="{{$isEdit ? $query->p_name : ''}}" required>
   </div>
   <div class="form-group">
     <label for="price">Price :</label>
-    <input type="number" minlength="0" step=0.01 class="form-control my-input" id="price" placeholder="Price" name="p_price" value="{{$isEdit ? $query->price : ''}}">
+    <input type="number" minlength="0" step=0.01 class="form-control my-input" id="price" placeholder="Price" name="p_price" value="{{$isEdit ? $query->price : ''}}" required>
   </div>
   <div class="form-group">
     <label for="number">Number :</label>
-    <input type="number" minlength="0" class="form-control my-input" id="number" placeholder="Number" name="p_num" value="{{$isEdit ? $query->num_o_p : ''}}">
+    <input type="number" minlength="0" class="form-control my-input" id="number" placeholder="Number" name="p_num" value="{{$isEdit ? $query->num_o_p : ''}}" required>
   </div>
   <input type="submit" class="btn btn-primary my-sub" name="sub" id="sub">
 </form>

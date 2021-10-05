@@ -15,8 +15,8 @@ Route::get('/about', [PagesController::class, 'about']);
 
 Route::get('/dashboard/add', [DashboardController::class, 'add']);
 Route::get('/dashboard/edit', [DashboardController::class, 'edit']);
-Route::get('/dashboard/editproduct', [DashboardController::class, 'editproduct']);
-Route::get('/dashboard/update', [DashboardController::class, 'update']);
+//Route::get('/dashboard/editproduct', [DashboardController::class, 'editproduct']);
+//Route::get('/dashboard/update', [DashboardController::class, 'update']);
 //Route::get('/dashboard/delete', [DashboardController::class, 'delete']);
 Route::get('/dashboard/info', [DashboardController::class, 'info']);
 
