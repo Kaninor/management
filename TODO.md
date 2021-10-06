@@ -8,7 +8,7 @@
 -   [x] new controller for add and edit
 -   [x] JQuery for add and edit
 -   [x] JQuery for increament and decreament
--   [ ] Report button in dashboard view
+-   [ ] Report action in dashboard view
 -   [x] Data validation for editing mode
 -   [ ] Sign up and login view
 -   [ ] Multiple admins for web app, handling them with token

@@ -201,7 +201,7 @@
 
   $("#reload-btn").on('click', () => {
     if (ids.length === 0 && numbers.length === 0) {
-      window.location.href = "/";
+      window.location.reload();
     } else {
       for (let i = 0; i < ids.length; i++) {
         let datas = {
@@ -213,7 +213,7 @@
           url: "/api/dashboard/update",
           data: datas,
           success: function() {
-            window.location.href = "/";
+            window.location.reload();
           },
         });
       }

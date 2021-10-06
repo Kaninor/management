@@ -24,6 +24,10 @@
     width: 100px;
     height: 42px;
   }
+
+  .mynavlink-add {
+    border-bottom: 3px solid white;
+  }
 </style>
 @stop
 
