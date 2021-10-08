@@ -18,3 +18,4 @@
 -   [x] add a new action called INFO and showing some details in there
 -   [ ] editing README
 -   [x] order by id (desc)
+-   [ ] file manager
