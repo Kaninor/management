@@ -30,7 +30,7 @@ class PagesController extends Controller
     public function dashboard()
     {
         $user = DB::table('admin')->where('id', 1)->first();
-        $products = DB::table('products')->get();
+        $products = DB::table('products')->orderBy('id', 'DESC')->get();
 
         $solds = DB::table("solds")->get("sale");
         $boughts = DB::table("boughts")->get("buy");
@@ -65,7 +65,7 @@ class PagesController extends Controller
 
     public function reports()
     {
-        $reports = DB::table("reports")->get();
+        $reports = DB::table("reports")->orderBy('id', 'DESC')->get();
 
         return view('mainPages.reports', compact('reports'));
     }
