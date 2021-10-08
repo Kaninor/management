@@ -2,6 +2,7 @@
 
 @section('header')
 <title>{{ $isEdit ? "Edit" : "Add" }}</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Righteous&family=Signika+Negative:wght@600;700&display=swap');
 
@@ -108,5 +109,9 @@
       e.preventDefault();
     }
   });
+
+  $("#reload-btn").on('click', function() {
+    window.location.reload();
+  })
 </script>
 @stop

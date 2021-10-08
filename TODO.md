@@ -17,3 +17,4 @@
 -   [x] Maybe making the web app more secure instead of using GET in adding new product we should use POST
 -   [x] add a new action called INFO and showing some details in there
 -   [ ] editing README
+-   [x] order by id (desc)

@@ -29,7 +29,7 @@
     }
 
     .mynavlink-add {
-      margin-left: 1030px;
+      margin-left: 1050px;
     }
   </style>
 </head>
@@ -65,7 +65,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mynavlink-reports" href="/reports" style="cursor: pointer; margin-bottom: -4px; margin-top: 2px; margin-left: 2px">
+          <a class="nav-link" id="report" style="cursor: pointer; margin-bottom: -4px; margin-top: 2px; margin-left: 6px">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots-fill" viewBox="0 0 16 16">
               <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
             </svg>
@@ -73,8 +73,8 @@
         </li>
         <!-- -->
         <li class="nav-item">
-          <a class="nav-link mynavlink-reload" onclick="window.location.reload()" style="cursor: pointer; margin-bottom: -4px; margin-top: 1px; margin-left: -1px">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 18 17">
+          <a class="nav-link" id="reload-btn" style="cursor: pointer; margin-bottom: -4px; margin-top: 1.5px; margin-left: 3px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 19 19">
               <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
               <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
             </svg>

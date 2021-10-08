@@ -162,5 +162,9 @@
       });
     }
   });
+
+  $("#reload-btn").on('click', function() {
+    window.location.reload();
+  })
 </script>
 @stop
