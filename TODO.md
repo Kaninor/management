@@ -19,3 +19,4 @@
 -   [ ] editing README
 -   [x] order by id (desc)
 -   [ ] file manager
+-   [x] removing their main actions from other navbars
