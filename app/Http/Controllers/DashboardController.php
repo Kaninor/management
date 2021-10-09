@@ -35,7 +35,6 @@ class DashboardController extends Controller
         $id = base64_decode(base64_decode(base64_decode($id)));
         $query = DB::table('products')->where('id', $id)->first();
 
-        $query = DB::table('products')->where('id', $id)->first();
         return view('dashboardViews.addEdit', compact('isEdit', 'query'));
     }
 
