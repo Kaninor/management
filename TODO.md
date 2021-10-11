@@ -7,7 +7,7 @@
 -   [x] Reports view
 -   [x] new controller for add and edit
 -   [x] JQuery for add and edit
--   [x] JQuery for increament and decreament
+-   [x] JQuery for increment and decrement
 -   [ ] Report action in dashboard view
 -   [x] Data validation for editing mode
 -   [ ] Sign up and login view

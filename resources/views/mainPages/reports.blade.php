@@ -157,7 +157,7 @@
         url: "/api/report/delete",
         data: datas,
         success: function() {
-          currentRow.remove();
+          window.location.reload();
         },
       });
     }

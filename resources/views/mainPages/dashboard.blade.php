@@ -228,7 +228,7 @@
         url: "/api/dashboard/delete",
         data: postData,
         success: function() {
-          currentRow.remove();
+          window.location.reload();
         },
       });
     }
